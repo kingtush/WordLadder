@@ -19,9 +19,6 @@ public class BreadthFirstPaths {
 
     }
 
-
-
-
     // breadth-first search from a single source
     private void bfs(Graph G, int s) {
         Queue<Integer> q = new LinkedList<Integer>();
@@ -81,10 +78,6 @@ public class BreadthFirstPaths {
         if (v < 0 || v >= V)
             throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V-1));
     }
-
-
-
-
 
 
 }

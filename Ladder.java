@@ -46,7 +46,6 @@ public class Ladder {
         return true;
     }
 
-
     /*
     longerString and shorterString are methods that help in the isNeighbor method.
      */
@@ -70,16 +69,13 @@ public class Ladder {
         List<String> words = new ArrayList<String>();
         Scanner l_scan = new Scanner(System.in);
 
-        //int wordcount = 0;
         String placer;
 
-        System.out.println("Enter the full path to the file: ");
+        System.out.println("Enter the full path to the dictionary file: ");
         String filePath = l_scan.nextLine();
-
 
         //BufferedReader scanner = new BufferedReader(new FileReader("/Users/tushmark/IdeaProjects/Ladder/Files/dictionary.txt"));
         BufferedReader scanner = new BufferedReader(new FileReader(filePath));
-
 
         while((placer = scanner.readLine())!= null){
 
@@ -87,8 +83,6 @@ public class Ladder {
             //wordcount++;
 
         }
-
-
         Graph G = new Graph(words.size());
         for (String word1 : words) {
             for (String word2 : words) {
@@ -113,9 +107,6 @@ public class Ladder {
         //System.out.println(words.size());
         //System.out.println(wordcount);
 
-
-
-
         String from;
         String to;
         boolean check=true;
@@ -134,7 +125,7 @@ public class Ladder {
 
                 BreadthFirstPaths bfs = new BreadthFirstPaths(G, words.indexOf(to));
                 if (bfs.hasPathTo(words.indexOf(from))) {
-                    System.out.println("length = " + bfs.distTo(words.indexOf(from)));
+                    //System.out.println("length = " + bfs.distTo(words.indexOf(from)));
                     for (int v : bfs.pathTo(words.indexOf(from))) {
                         System.out.print(words.get(v) + " ");
                     }
